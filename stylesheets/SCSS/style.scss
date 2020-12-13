@@ -1,32 +1,44 @@
 @import url("https://fonts.googleapis.com/css2?family=Mina&display=swap");
+
+$primary-color: #0085fa;
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
     font-family: "Mina", sans-serif;
 }
 
 body {
-    background-color: #0085fa;
+    background-color: $primary-color;
     background-image: url("/assets/asfalt-light.png");
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
     height: 100vh;
+}
+
+#wrapper {
+    position: relative;
+    top: 150px;
+    text-align: center;
+
+    h4 {
+        color: white;
+        font-weight: 400;
+        margin-top: 12px;
+    }
 }
 
 #quote-box {
     padding: 35px;
     padding-top: 40px;
     max-width: 45%;
-    min-width: 200px;
+    min-width: 300px;
     height: auto;
     margin: 0 auto;
     background-color: #fafafa;
     border-radius: 12px;
     box-shadow: 2px 8px 21px 5px rgba(0, 0, 0, 0.36);
     text-align: center;
-    position: relative;
-    top: 150px;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -52,7 +64,7 @@ body {
 }
 
 #tweet-quote {
-    background-color: #0085fa;
+    background-color: $primary-color;
     padding: 5px;
     padding-bottom: 0;
     box-shadow: 1px 1px 8px -2px rgba(0, 0, 0, 0.5);
@@ -65,11 +77,11 @@ body {
 
 #new-quote {
     border-radius: 5px;
-    height: 30px;
-    width: 95px;
+    height: 39.5px;
+    width: 100px;
     border: none;
     box-shadow: 1px 1px 8px -2px rgba(0, 0, 0, 0.5);
-    background-color: #0085fa;
+    background-color: $primary-color;
     color: white;
 }
 
