@@ -11,7 +11,7 @@ $primary-color: #0085fa;
 
 body {
     background-color: $primary-color;
-    background-image: url("/assets/asfalt-light.png");
+    background-image: url("../assets/asfalt-light.png");
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
     height: 100vh;
 }
