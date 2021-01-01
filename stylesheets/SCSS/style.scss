@@ -50,6 +50,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     flex-direction: column;
+    padding-top: 28px;
 }
 
 #author {
@@ -87,4 +88,18 @@ body {
 
 #new-quote:hover {
     cursor: pointer;
+}
+
+#author-img {
+    border: 4px solid #0085fa;
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-repeat: no-repeat;
+    background-size: cover;
 }

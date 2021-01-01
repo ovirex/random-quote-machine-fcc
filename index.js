@@ -23,7 +23,7 @@ function getRandomArbitrary(min, max) {
 function showNewQuote(data) {
     let quoteElement = document.getElementById("text");
     let authorElement = document.getElementById("author");
-    let tweetBtn = document.getElementById("tweet-quote");
+    let authorImage = document.getElementById("author-img").style;
     let randomNumber = 0;
 
     randomNumber = getRandomArbitrary(0, data["quotes"].length);
@@ -31,11 +31,16 @@ function showNewQuote(data) {
 
     let quotesData = data["quotes"][randomNumber];
 
+    if (quotesData["imgLink"] == "No link found.") {
+        authorImage.backgroundImage = `url(https://upload.wikimedia.org/wikipedia/commons/b/bc/Unknown_person.jpg)`;
+    } else {
+        authorImage.backgroundImage = `url(${quotesData["imgLink"]})`;
+    }
     quoteElement.innerText = `"${quotesData["quote"]}"`;
     authorElement.innerText = `-${quotesData["author"]}`;
 }
 
-function tweetQuote(quote, author) {
+function tweetQuote() {
     let quoteText = document.getElementById("text").innerText;
     let authorText = document
         .getElementById("author")
