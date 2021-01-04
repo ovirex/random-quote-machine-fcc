@@ -2,9 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let newQuoteBtn = document.getElementById("new-quote");
     let tweetBtn = document.getElementById("tweet-quote");
 
-    fetch(
-        "https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json"
-    )
+    fetch("https://api.jsonbin.io/b/5ff32bad09f7c73f1b6d902c")
         .then((res) => res.json())
         .then((data) => {
             showNewQuote(data);
@@ -23,7 +21,7 @@ function getRandomArbitrary(min, max) {
 function showNewQuote(data) {
     let quoteElement = document.getElementById("text");
     let authorElement = document.getElementById("author");
-    let authorImage = document.getElementById("author-img").style;
+    let authorImage = document.getElementById("author-img");
     let randomNumber = 0;
 
     randomNumber = getRandomArbitrary(0, data["quotes"].length);
@@ -34,7 +32,8 @@ function showNewQuote(data) {
     if (quotesData["imgLink"] == "No link found.") {
         authorImage.backgroundImage = `url(https://upload.wikimedia.org/wikipedia/commons/b/bc/Unknown_person.jpg)`;
     } else {
-        authorImage.backgroundImage = `url(${quotesData["imgLink"]})`;
+        authorImage.style.backgroundImage = `url(${quotesData["imgLink"]})`;
+        authorImage.title = `${quotesData["author"]}`;
     }
     quoteElement.innerText = `"${quotesData["quote"]}"`;
     authorElement.innerText = `-${quotesData["author"]}`;

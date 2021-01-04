@@ -10,7 +10,6 @@
 body {
   background-color: #0085fa;
   background-image: url("../../assets/asfalt_light.PNG");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   height: 100vh;
 }
 
@@ -123,6 +122,8 @@ body {
           transform: translate(-50%, -50%);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
 }
 
 /*# sourceMappingURL=style.css.map */
